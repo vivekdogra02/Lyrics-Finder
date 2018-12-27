@@ -17,10 +17,10 @@ class Lyrics extends Component {
          this.props.match.params.id}&apikey=${process.env.REACT_APP_MM_KEY}`)
       .then(res => {
          console.log(res.data);
-         if(!(res.data.message.body && res.data.message.body.length)) {
-            this.props.history.push('/');
-            return;
-         }
+         // if(!(res.data.message.body && res.data.message.body.length)) {
+         //    this.props.history.push('/');
+         //    return;
+         // }
          this.setState({lyrics: res.data.message.body.lyrics});
          return axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.get?track_id=${
             this.props.match.params.id}&apikey=${process.env.REACT_APP_MM_KEY}`)
